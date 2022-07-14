@@ -60,7 +60,7 @@ func produce(ctx context.Context) {
 	})
 
 	operation := model.StateEvent
-	//for {
+	for {
 		newMessage := model.Message{
 			Operation: operation,
 			Payload: model.Vehicle{
@@ -95,7 +95,7 @@ func produce(ctx context.Context) {
 		i++
 
 		time.Sleep(time.Second)
-	//}
+	}
 }
 
 func randomString(length int) string {

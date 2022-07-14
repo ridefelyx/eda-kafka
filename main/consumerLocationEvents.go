@@ -13,7 +13,7 @@ func consumeLocationEvents(ctx context.Context) {
 	r := kafka.NewReader(kafka.ReaderConfig{
 		Brokers: []string{broker1Address, broker2Address},
 		Topic:   topicVehicles,
-		GroupID: "my-group",
+		GroupID: "state",
 	})
 	for {
 		// the `ReadMessage` method blocks until we receive the next event

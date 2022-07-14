@@ -11,5 +11,7 @@ func main() {
 	// both the produce and consume functions are
 	// blocking
 	go produce(ctx)
-	consumeStateEvents(ctx)
+	//consumeStateEvents(ctx)
+	consumeBatteryEvents(ctx)
+	//consumeLocationEvents(ctx)
 }

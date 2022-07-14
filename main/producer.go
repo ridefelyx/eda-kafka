@@ -20,6 +20,8 @@ const (
 )
 
 func produce(ctx context.Context) {
+	// if topic does not already exist and needs to be explicitly created
+
 	//conn, err := kafka.Dial("tcp", broker1Address)
 	//if err != nil {
 	//	panic(err.Error())
@@ -50,7 +52,7 @@ func produce(ctx context.Context) {
 	//if err != nil {
 	//	panic(err.Error())
 	//}
-		i := 0
+	i := 0
 
 	w := kafka.NewWriter(kafka.WriterConfig{
 		Brokers: []string{broker1Address, broker2Address},
@@ -58,7 +60,7 @@ func produce(ctx context.Context) {
 	})
 
 	operation := model.StateEvent
-	for {
+	//for {
 		newMessage := model.Message{
 			Operation: operation,
 			Payload: model.Vehicle{
@@ -92,8 +94,8 @@ func produce(ctx context.Context) {
 		fmt.Println("writes:", i)
 		i++
 
-		time.Sleep(time.Second * 3)
-	}
+		time.Sleep(time.Second)
+	//}
 }
 
 func randomString(length int) string {

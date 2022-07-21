@@ -59,7 +59,7 @@ func consumeInTimeFrame(ctx context.Context) {
 		if m.Time.After(endTime) {
 			//break
 		}
-		fmt.Printf("message at offset %d: %s = %s\n", m.Offset, string(m.Key), string(m.Value))
+		fmt.Printf("received event at offset %v - at %s: \n%s \n\n", m.Offset, m.Time, string(m.Value))
 	}
 
 	if err := r.Close(); err != nil {

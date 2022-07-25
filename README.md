@@ -1,4 +1,5 @@
 # Kafka POC
+# Setup
 ## Install Kafka
 https://archive.apache.org/dist/kafka/3.0.0/kafka_2.13-3.0.0.tgz
 
@@ -35,5 +36,16 @@ delete topic: `bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --
 
 ### Start consumer
 `bin/kafka-console-consumer.sh --bootstrap-server localhost:9093 --topic my-kafka-topic --from-beginning`
+
+# Pros and cons
+
+## Pros
+- easy to set up locally, extensive and easy to follow official documentation
+- lots of tutorials and online materials for different problems that might occur
+- several go libraries with good documentation and regular maintenance
+- automatic topic creation can be enabled or disabled
+
+## Cons
+- message ordering within partitions only
 
 	

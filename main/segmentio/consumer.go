@@ -16,7 +16,7 @@ func consume(ctx context.Context, groupID string) {
 	r := kafka.NewReader(kafka.ReaderConfig{
 		Brokers: []string{broker1Address},
 		Topic:   topicVehicles,
-		//GroupID: groupID,
+		GroupID: groupID,
 	})
 	for {
 		// the `ReadMessage` method blocks until we receive the next event

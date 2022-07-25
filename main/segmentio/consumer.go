@@ -14,9 +14,9 @@ func consume(ctx context.Context, groupID string) {
 	// the groupID identifies the consumer and prevents
 	// it from receiving duplicate messages
 	r := kafka.NewReader(kafka.ReaderConfig{
-		Brokers: []string{broker1Address, broker2Address},
+		Brokers: []string{broker1Address},
 		Topic:   topicVehicles,
-		GroupID: groupID,
+		//GroupID: groupID,
 	})
 	for {
 		// the `ReadMessage` method blocks until we receive the next event

@@ -44,8 +44,10 @@ delete topic: `bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --
 - lots of tutorials and online materials for different problems that might occur
 - several go libraries with good documentation and regular maintenance
 - automatic topic creation can be enabled or disabled
+- support avro schema
 
 ## Cons
 - message ordering within partitions only
+- extensive features and available materials can be overwhelming for beginners (distinguishing what is important and what isn't)
 
 	

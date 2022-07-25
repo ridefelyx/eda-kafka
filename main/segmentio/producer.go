@@ -12,6 +12,12 @@ import (
 	"time"
 )
 
+// the topicVehicles and broker address are initialized as constants
+const (
+	topicVehicles  = "topic-vehicles"
+	broker1Address = "localhost:19091"
+)
+
 func produce() {
 	conn, err := kafka.DialLeader(context.Background(), "tcp", broker1Address, topicVehicles, 0)
 	if err != nil {
@@ -28,7 +34,6 @@ func produce() {
 				Latitude:          float64(rand.Intn(90-(-90)) + (-90)),
 				Longitude:         float64(rand.Intn(180-(-180)) + (-180)),
 				BatteryPercentage: int64(rand.Intn(100)),
-				State:             model.Active,
 			},
 		}
 

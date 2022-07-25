@@ -22,6 +22,7 @@ func main() {
 
 	for i := 0; i < len(groups); i++ {
 		go consume(ctx, groups[i])
+		//go consumeInTimeFrame(ctx)
 	}
 	<-done
 }

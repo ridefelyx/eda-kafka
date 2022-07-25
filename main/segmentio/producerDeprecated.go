@@ -12,13 +12,6 @@ import (
 	"time"
 )
 
-// the topicVehicles and broker address are initialized as constants
-const (
-	topicVehicles  = "vehicles"
-	broker1Address = "localhost:19091"
-	broker2Address = "localhost:29091"
-)
-
 func produceDeprecated(ctx context.Context) {
 	// if topic does not already exist and needs to be explicitly created
 
@@ -55,7 +48,7 @@ func produceDeprecated(ctx context.Context) {
 	i := 0
 
 	w := kafka.NewWriter(kafka.WriterConfig{
-		Brokers: []string{broker1Address, broker2Address},
+		Brokers: []string{broker1Address},
 		Topic:   topicVehicles,
 	})
 
@@ -69,7 +62,6 @@ func produceDeprecated(ctx context.Context) {
 				Latitude:          float64(rand.Intn(90-(-90)) + (-90)),
 				Longitude:         float64(rand.Intn(180-(-180)) + (-180)),
 				BatteryPercentage: int64(rand.Intn(100)),
-				State:             model.Active,
 			},
 		}
 

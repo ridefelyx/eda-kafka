@@ -46,6 +46,7 @@ delete topic: `bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --
 - automatic topic creation can be enabled or disabled
 - support avro schema
 - messages are persistent and durable allowing replayability
+- possible to achieve exactly-once processing with features: idempotent producers, transactions across partitions, Kafka-based offset storage
 
 ## Cons
 - message ordering within partitions only
